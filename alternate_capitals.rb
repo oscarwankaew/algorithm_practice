@@ -5,20 +5,19 @@
 
 #   Activity
 
-# def capitalized(string)
-string = "hello, how are your porcupines today?"
-array = string.split("")
-index = 0
-output = []
-while index < array.length
-  if index.even?
-    output << array[index]
-  else
-    output << array[index].upcase
+def capitalized(string)
+  array = string.split("")
+  index = 0
+  output = []
+  while index < array.length
+    if index.even?
+      output << array[index]
+    else
+      output << array[index].upcase
+    end
+    index += 1
   end
-  index += 1
+  p output.join
 end
-p output.join
-# end
 
-# p capitalized("hello, how are your porcupines today?")
+p capitalized("hello, how are your porcupines today?")
