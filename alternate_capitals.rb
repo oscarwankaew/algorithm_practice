@@ -10,10 +10,12 @@ string = "hello, how are your porcupines today?"
 array = string.split("")
 index = 0
 output = []
-while index < array.length - 1
-  output << array[index]
-  index += 1
-  output << array[index].upcase
+while index < array.length
+  if index.even?
+    output << array[index]
+  else
+    output << array[index].upcase
+  end
   index += 1
 end
 p output.join
