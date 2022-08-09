@@ -16,11 +16,16 @@
 # }
 
 def hash(array, number)
-  index = 0
+  # index = 0
+  # output = {}
+  # while index < array.length
+  #   output[array[index]] = number
+  #   index += 1
+  # end
+  # return output
   output = {}
-  while index < array.length
-    output[array[index]] = number
-    index += 1
+  array.each do |letter|
+    output[letter] = number
   end
   return output
 end
