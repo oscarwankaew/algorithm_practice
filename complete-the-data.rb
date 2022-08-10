@@ -26,12 +26,13 @@ def replacesID(array)
   users = { 403 => "Aunty Em", 231 => "Joelle P.", 989 => "Lyndon Johnson", 111 => "Patti Q." }
   output = []
   index = 0
-  inner = 0
   while index < array.length
-    while inner < array[index].length
-      id = array[index][inner][:submitted_by]
-      inner += 1
+    id = array[index][:submitted_by]
+    if users[id]
+      array[index][:submitted_by] = users[id]
+      output << array[index]
     end
+
     index += 1
   end
   return output
