@@ -29,7 +29,19 @@
 # ]
 # }
 
-def completeData(hash)
+def completeData(array)
+  authorCentric = {}
+  movies_list = []
+  movies = {}
+  index = 0
+  while index < array.length
+    authorCentric[array[index][:author]] = movies_list
+    movies["title"] = array[index][:title]
+    movies["year"] = array[index][:year]
+    p movies
+    index += 1
+  end
+  return authorCentric
 end
 
 p completeData([
