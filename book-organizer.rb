@@ -31,14 +31,21 @@
 
 def completeData(array)
   authorCentric = {}
-  movies_list = []
-  movies = {}
+  books_list = []
+  books = {}
   index = 0
   while index < array.length
-    authorCentric[array[index][:author]] = movies_list
-    movies["title"] = array[index][:title]
-    movies["year"] = array[index][:year]
-    p movies
+    if authorCentric[array[index][:author]] = array[index][:author]
+      authorCentric[array[index][:author]] = books_list
+      books_list << array[index][:title]
+      books_list << array[index][:year]
+    else
+      authorCentric[array[index][:author]] = books_list
+    end
+
+    # books["title"] = array[index][:title]
+    # books["year"] = array[index][:year]
+    # p books
     index += 1
   end
   return authorCentric
