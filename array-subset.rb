@@ -9,24 +9,16 @@
 # Output: false
 
 def subset(array1, array2)
-  output = ""
-  index = 0
-  while index < array1.length
-    inner = 0
-    while inner < array2.length
-      if array1[index] == array2[inner]
-        output = true
-      else
-        inner += 1
-      end
-      if array1[index] != array2[inner]
-        output = false
-      end
-      inner += 1
-    end
-    index += 1
+  output = {}
+  array1.each do |number|
+    output[number] = number
   end
-  return output
+  array2.each do |number|
+    if number != output[number]
+      return false
+    end
+  end
+  return true
 end
 
-p subset([1, 2, 3, 4, 5, 6], [6, 3, 2])
+p subset([1, 2, 3, 4, 5, 6], [6, 3, 7])
