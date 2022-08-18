@@ -24,3 +24,25 @@ def duplicate(array)
 end
 
 p duplicate([5, 2, 9, 7, 2, 6])
+
+def duplicate(array)
+  output = []
+  count = {}
+  index = 0
+  while index < array.length
+    if count[array[index]]
+      count[array[index]] += 1
+    else
+      count[array[index]] = 1
+    end
+    index += 1
+  end
+  count.map do |key, value|
+    if value > 1
+      output << key
+    end
+  end
+  return output
+end
+
+p duplicate([5, 2, 9, 7, 2, 6, 6])
