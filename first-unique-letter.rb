@@ -14,26 +14,21 @@
 
 # Note: You may assume the string contain only lowercase letters.
 
-s = "leetcode"
-index = 0
-count = {}
-while index < s.length
-  if count[s[index]]
-    count[s[index]] += 1
-  else
-    count[s[index]] = 1
+def first_uniq_char(s)
+  return -1 if s.length == 0
+
+  counts = Hash.new 0
+  s.each_char do |char|
+    counts[char] += 1
   end
-  index += 1
+
+  s.each_char.with_index do |char, i|
+    if counts[char] == 1
+      return i
+    end
+  end
+
+  return -1
 end
-count.map do |k, v|
-  if v == 1
-    k
-  end
-  s = "leetcode"
-  index = 0
-  while index < s.length
-    break if k == s[index]
-    p index
-    index += 1
-  end
-end
+
+p first_uniq_char("leetcode")
